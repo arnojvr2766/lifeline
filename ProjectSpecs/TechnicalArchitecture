@@ -1,0 +1,190 @@
+Frontend (Flutter):
+- State Management: Riverpod
+- Navigation: GoRouter
+- Local Storage: Hive (for offline data)
+- Network Layer: Dio (for API calls)
+- Image Handling: cached_network_image
+
+Backend (Firebase):
+- Authentication: Firebase Auth
+- Database: Cloud Firestore
+- Storage: Firebase Storage
+- Functions: Firebase Cloud Functions
+- Analytics: Firebase Analytics
+- Crashlytics: Firebase Crashlytics
+
+// Core Models
+User
+- id: String
+- name: String
+- email: String
+- phone: String
+- emergencyContacts: List<Contact>
+- offlineSync: bool
+
+Incident
+- id: String
+- userId: String
+- type: IncidentType (enum)
+- status: IncidentStatus (enum)
+- timestamp: DateTime
+- location: GeoPoint
+- details: Map<String, dynamic>
+- mediaUrls: List<String>
+- documents: List<GeneratedDocument>
+
+EmergencyContact
+- id: String
+- name: String
+- phone: String
+- relationship: String
+- notifyOnIncident: bool
+
+Project Folder Structure:
+
+lib/
+├── app/
+│   ├── app.dart                   # App widget with theme and routing
+│   └── app_config.dart           # App-wide configuration
+│
+├── core/
+│   ├── constants/
+│   │   ├── app_constants.dart
+│   │   └── theme_constants.dart
+│   ├── enums/
+│   │   ├── incident_type.dart
+│   │   └── incident_status.dart
+│   ├── errors/
+│   │   ├── app_errors.dart
+│   │   └── error_handling.dart
+│   └── utils/
+│       ├── validators.dart
+│       └── formatters.dart
+│
+├── features/
+│   ├── auth/
+│   │   ├── data/
+│   │   │   ├── repositories/
+│   │   │   └── datasources/
+│   │   ├── domain/
+│   │   │   ├── entities/
+│   │   │   └── repositories/
+│   │   └── presentation/
+│   │       ├── screens/
+│   │       ├── widgets/
+│   │       └── providers/
+│   │
+│   ├── incidents/
+│   │   ├── data/
+│   │   │   ├── repositories/
+│   │   │   └── datasources/
+│   │   ├── domain/
+│   │   │   ├── entities/
+│   │   │   └── repositories/
+│   │   └── presentation/
+│   │       ├── screens/
+│   │       ├── widgets/
+│   │       └── providers/
+│   │
+│   └── profile/
+│       ├── data/
+│       │   ├── repositories/
+│       │   └── datasources/
+│       ├── domain/
+│       │   ├── entities/
+│   │   │   └── repositories/
+│   │   └── presentation/
+│   │       ├── screens/
+│   │       ├── widgets/
+│   │       └── providers/
+│   │
+│   └── models/
+│       ├── user.dart
+│       ├── incident.dart
+│       └── emergency_contact.dart
+│
+├── providers/
+│   ├── auth_provider.dart
+│   ├── incident_provider.dart
+│   └── app_state_provider.dart
+│
+├── repositories/
+│   ├── auth_repository.dart
+│   ├── incident_repository.dart
+│   └── storage_repository.dart
+│
+├── router/
+│   ├── router.dart
+│   └── routes.dart
+│
+├── services/
+│   ├── firebase/
+│   │   ├── firebase_auth_service.dart
+│   │   ├── firebase_storage_service.dart
+│   │   └── firestore_service.dart
+│   ├── local/
+│   │   ├── hive_service.dart
+│   │   └── shared_prefs_service.dart
+│   └── network/
+│       └── dio_service.dart
+│
+├── shared/
+│   ├── widgets/
+│   │   ├── buttons/
+│   │   ├── cards/
+│   │   └── dialogs/
+│   └── theme/
+│       ├── app_theme.dart
+│       ├── colors.dart
+│       └── text_styles.dart
+│
+└── main.dart
+
+Key Responsibilities:
+
+1. app/
+   - Application-level configuration
+   - Theme setup
+   - Root widget
+
+2. core/
+   - Constants and enums
+   - Error handling
+   - Utility functions
+   - Base classes
+
+3. features/
+   - Feature-specific code
+   - Follows clean architecture
+   - Separates data, domain, and presentation
+
+4. models/
+   - Data models
+   - Freezed classes
+   - JSON serialization
+
+5. providers/
+   - Riverpod providers
+   - State management
+   - Dependencies injection
+
+6. repositories/
+   - Data access layer
+   - Business logic
+   - API integration
+
+7. router/
+   - Navigation setup
+   - Route definitions
+   - Deep linking
+
+8. services/
+   - Firebase integration
+   - Local storage
+   - Network calls
+
+9. shared/
+   - Reusable widgets
+   - Theme definitions
+   - Common utilities
+

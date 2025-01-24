@@ -1,0 +1,188 @@
+Below is a conceptual visual design outline for your emergency incident app. Since this platform does not support embedding actual graphics, I’ll describe each screen’s layout, color palette, and style elements in detail. Think of this as a high-fidelity wireframe (or low-fidelity mockup) that a UI designer could refine into final visuals.
+
+1. Design Language & Style
+	•	Overall Look & Feel: Modern, clean, and user-friendly—large tap targets, minimal text, and intuitive iconography.
+	•	Color Palette (example):
+	•	Primary: #00A8E8 (a bright, fresh teal-blue)
+	•	Accent: #FF7A59 (a warm coral for highlights or alerts)
+	•	Background: #FFFFFF (main background)
+	•	Secondary Background / Cards: #F4F8FA (light grayish blue)
+	•	Text: #2D3A45 (dark gray / charcoal)
+	•	Icons: Use a consistent stroke width and style (outlined or solid) to match your brand.
+	•	Typography (example):
+	•	Heading Font: Montserrat (bold, uppercase for main headings)
+	•	Body Font: Roboto (regular, easy-to-read body text)
+	•	Font Sizes: Large headings (~22–24px), Sub-headings (18–20px), Body text (14–16px)
+	•	Icon Style: Simple, flat or slightly rounded shapes, minimal detail, color-coded for each category (e.g., car accident = teal icon, medical emergency = red icon, etc.).
+
+2. App Screens (Wireframe Descriptions)
+
+2.1 Splash Screen
+	1.	Background: Full white.
+	2.	Center Logo: Your app’s logo (possibly a shield or “emergency beacon” icon).
+	3.	Bottom Text: Small “Powered by [Company Name]” or tagline.
+
+	Purpose: Quick loading brand moment before user is taken to main or login screen.
+
+2.2 Onboarding / Login Screen
+	1.	Top Section: App logo with brief tagline: “Your Emergency Companion.”
+	2.	Login & Sign-up Options:
+	•	Email / Password fields.
+	•	Optional OAuth Buttons (e.g., “Continue with Google,” “Continue with Apple”).
+	3.	Call to Action Button: “Log in” or “Sign up.”
+	4.	Skip or Guest Mode (optional): “Use as Guest” with limited features.
+
+	Visuals:
+
+	•	A minimal illustration in the background (e.g., a person making an emergency call or a stylized safe-shield icon).
+	•	Crisp, large text fields and clear buttons for quick access.
+
+2.3 Home / Dashboard
+	1.	Header (Top Bar)
+	•	Left: Hamburger menu or user avatar icon.
+	•	Center: App logo or “Dashboard.”
+	•	Right: Notification bell icon if you plan to have alerts.
+	2.	Main Body: Grid or card layout with Icon Tiles representing different emergency scenarios. For example:
+	•	Car Accident: Car icon.
+	•	Medical Emergency: Red cross icon.
+	•	Home Emergency: House icon.
+	•	More: Grid expands if you add additional scenarios.
+Each tile has:
+	•	Icon in the center (large, ~64px).
+	•	Label below (e.g., “Car Accident”).
+	3.	Footer / Tab Bar (optional)
+	•	Home (active)
+	•	Incidents (past incident logs)
+	•	Profile (user settings)
+	•	More (any extra features/settings)
+
+	Style Notes:
+
+	•	Use subtle card shadows or rounded corners to add depth.
+	•	Keep spacing consistent between tiles.
+
+2.4 Scenario Screen (e.g., “Car Accident”)
+
+Imagine the user taps the “Car Accident” tile:
+	1.	Header: “Car Accident” with a back arrow to Home.
+	2.	Sub-Header: Short text describing the immediate steps: “Follow these steps to ensure safety and gather necessary info.”
+	3.	Checklist / Step Flow
+	•	Display a vertical list with checkboxes or progress indicators:
+	1.	Check for Injuries
+	2.	Call Emergency Services
+	3.	Take Photos (Damage, Plate, Surroundings)
+	4.	Collect Other Driver Info
+	5.	Document Incident
+	•	Each step is a clickable row with a small arrow to expand more details or launch a sub-screen:
+	•	“Call Emergency Services”: Tapping opens a bottom sheet with quick-dial buttons: Police, Ambulance, Tow Truck.
+	•	“Take Photos”: Tapping triggers the phone camera with a preview gallery.
+	•	“Document Incident”: Tapping opens a form to input date, time, location, notes.
+	4.	Progress Indicator
+	•	A small bar or numeric fraction (e.g., 3/5 steps completed) at the top or bottom of the screen.
+	5.	Floating Action Button (FAB) (optional)
+	•	A prominent circular button at bottom-right corner with a phone or help icon to instantly dial the main emergency line.
+
+	Visuals:
+
+	•	Keep each checklist item in a rounded rectangle “card.”
+	•	Minimal color; accent items on hover or selection to confirm progress.
+
+2.5 Incident Details / Data Capture Screen
+
+If the user taps “Document Incident” from the checklist:
+	1.	Header: “Accident Details.”
+	2.	Form Fields:
+	•	Date/Time (auto-captured, user can edit).
+	•	Location (GPS or user enters manually).
+	•	Involved Parties: Driver info (Name, license, phone).
+	•	Witnesses: Name, contact info.
+	•	Additional Notes (free text or voice-to-text).
+	3.	Photo/Video Upload Thumbnails at the bottom (or a grid showing all collected media).
+	4.	Save Button: On tap, data is saved to the user’s incident record in the cloud.
+
+	Visuals:
+
+	•	Clean, single-column layout with labeled input fields.
+	•	Light shadows or borders around text fields to separate them visually.
+
+2.6 AI Document Generation
+
+After completing steps, the user may want to generate a formal report:
+	1.	Header: “Generate Report / Claim.”
+	2.	Preview Panel:
+	•	Shows a summary: “Car Accident on [date] at [location]. Parties involved: [X]. Photos: [X].”
+	•	A button: “Generate Insurance Claim,” “Generate Police Report,” etc.
+	3.	Generate Button:
+	•	On tap, calls the AI API with all structured data.
+	•	Displays a loading indicator (e.g., spinning icon or progress bar).
+	4.	Result:
+	•	Once generated, show a textual preview of the claim/report with options to:
+	•	Edit (make small text adjustments).
+	•	Export (PDF, Email, Download, etc.).
+
+	Visuals:
+
+	•	Use a card-like preview with a well-structured layout.
+	•	A floating “Generate” button in accent color (#FF7A59) to emphasize action.
+
+2.7 Incident Log / History
+
+Accessible from the tab bar or main menu:
+	1.	Header: “My Incidents”
+	2.	List of Incidents: Each incident is a card or row with:
+	•	Incident Type icon (car, house, medical, etc.).
+	•	Date/Time.
+	•	Short description (e.g., “Rear-end collision on N1, JHB”).
+	•	Status (In progress / Resolved).
+	3.	Tapping an Incident:
+	•	Opens a detail view with the collected data, photos, and generated reports.
+	•	Option to share or re-download any documents.
+
+	Visuals:
+
+	•	Consistent icon style for each incident type.
+	•	Subtle accent lines or color blocks indicating open or closed cases.
+
+2.8 User Profile & Settings
+	1.	Header: “My Profile”
+	2.	User Photo / Avatar at top.
+	3.	Details: Name, email, phone, insurance details.
+	4.	Emergency Contacts: Manage a list of phone numbers to auto-notify if an incident is severe.
+	5.	Privacy & Settings:
+	•	Toggle data-sharing preferences.
+	•	Delete account / data.
+	•	Notification settings.
+
+3. Additional Visual Touches
+	1.	Animation & Transitions
+	•	Subtle card hover or press animation.
+	•	Smooth screen transitions (slide in/out).
+	•	A gentle “checkmark” animation when a step is completed.
+	2.	Illustrations / Iconography
+	•	Use a consistent set of flat or slightly 3D icons to highlight each incident scenario.
+	•	Could include simple line-art illustrations showing user steps (e.g., “Take Photo,” “Call 911”).
+	3.	Microcopy / Tooltips
+	•	Short instructions or hints near form fields for clarity.
+	•	Example: “Need help with this step?” link leading to a quick tips pop-up.
+	4.	Color Accents for Emphasis
+	•	Use the accent color (#FF7A59) sparingly for high-importance actions like “Generate Report” or “Call Now.”
+	•	Keep the primary teal (#00A8E8) for main interactive elements (checklists, confirmations, etc.).
+
+4. Putting It All Together
+
+A modern, sleek design for your emergency app would:
+	1.	Welcome Users Quickly with a simple login or guest mode.
+	2.	Present Scenarios in a tile-based home screen with large icons.
+	3.	Guide users with a step-by-step checklist and clear CTAs.
+	4.	Offer a well-organized incident details screen and easy AI-based document generation.
+	5.	Store everything in a cleanly designed incident history, easily accessible from the nav bar.
+	6.	Allow users to manage their profile and settings with minimal friction.
+
+Final Thoughts
+	•	Keep the layout clean: white space, consistent margins, and alignment create a professional feel.
+	•	Focus on strong contrast and legible typography—in emergencies, users need quick readability.
+	•	The step-by-step approach (with checkboxes or progress bars) is crucial to guide users who are stressed or in a rush.
+	•	Color-coded icons for each scenario add visual interest and help with quick identification.
+	•	Transitions and animations should be subtle and enhance usability rather than distract.
+
+With these conceptual wireframes and style guidelines, your development team and designers can create polished UI mockups and high-fidelity prototypes. This foundation will ensure a modern, sleek, and most importantly, user-friendly app experience.
